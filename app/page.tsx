@@ -26,10 +26,10 @@ export default function Portfolio() {
       link: "http://localhost:8080/admin",
     },
     {
-      title: "E-Commerce Platform",
-      description: "Platform e-commerce dengan fitur cart dan checkout",
+      title: "Website Portofolio & CV",
+      description: "Website ini adalah platform digital yang dirancang sebagai pusat personal branding profesional. Tujuannya adalah untuk menampilkan riwayat pendidikan, pengalaman kerja, keahlian teknis, serta galeri proyek yang telah dikerjakan secara terstruktur dan estetis. Website ini berfungsi sebagai pengganti CV statis (kertas/PDF) dengan memberikan pengalaman yang lebih interaktif dan mudah diakses oleh perekrut atau klien potensial.",
       tags: ["React", "Node.js", "MongoDB"],
-      link: "#",
+      link: "portofolio-cv-pied.vercel.app",
     },
     {
       title: "Weather App",
