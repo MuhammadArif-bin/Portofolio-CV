@@ -1,0 +1,77 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /Resources 4 0 R /MediaBox [0 0 612 792] /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> >> >>
+endobj
+5 0 obj
+<< /Length 1200 >>
+stream
+BT
+/F1 24 Tf
+50 750 Td
+(CURRICULUM VITAE) Tj
+0 -40 Td
+/F1 14 Tf
+(Muhammad Arif Giovanni) Tj
+0 -30 Td
+/F1 12 Tf
+(Web Developer | Fresh Graduate) Tj
+0 -20 Td
+(Email: your.email@example.com) Tj
+0 -15 Td
+(GitHub: https://github.com) Tj
+0 -15 Td
+(LinkedIn: https://linkedin.com) Tj
+0 -40 Td
+/F1 14 Tf
+(EDUCATION) Tj
+0 -20 Td
+/F1 12 Tf
+(Mahasiswa Informatika) Tj
+0 -15 Td
+(University Name) Tj
+0 -40 Td
+/F1 14 Tf
+(SKILLS) Tj
+0 -20 Td
+/F1 12 Tf
+(Frontend: HTML5, CSS3, JavaScript, React, TypeScript, Tailwind CSS) Tj
+0 -15 Td
+(Tools: Git, Webpack, npm, Visual Studio Code) Tj
+0 -40 Td
+/F1 14 Tf
+(PROJECTS) Tj
+0 -20 Td
+/F1 12 Tf
+(1. Website Responsif - Portfolio website dengan design modern) Tj
+0 -15 Td
+(2. E-Commerce Platform - Platform e-commerce dengan fitur lengkap) Tj
+0 -15 Td
+(3. Weather App - Aplikasi cuaca real-time dengan API integration) Tj
+0 -40 Td
+/F1 12 Tf
+(Download this file from your portfolio website) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000214 00000 n 
+0000000313 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1564
+%%EOF
