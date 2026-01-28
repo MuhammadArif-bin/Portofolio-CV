@@ -27,9 +27,10 @@ export default function Portfolio() {
     },
     {
       title: "Website Portofolio & CV",
-      description: "Website ini adalah platform digital yang dirancang sebagai pusat personal branding profesional. Tujuannya adalah untuk menampilkan riwayat pendidikan, pengalaman kerja, keahlian teknis, serta galeri proyek yang telah dikerjakan secara terstruktur dan estetis. Website ini berfungsi sebagai pengganti CV statis (kertas/PDF) dengan memberikan pengalaman yang lebih interaktif dan mudah diakses oleh perekrut atau klien potensial.",
+      description:
+        "Website ini adalah platform digital yang dirancang sebagai pusat personal branding profesional. Tujuannya adalah untuk menampilkan riwayat pendidikan, pengalaman kerja, keahlian teknis, serta galeri proyek yang telah dikerjakan secara terstruktur dan estetis. Website ini berfungsi sebagai pengganti CV statis (kertas/PDF) dengan memberikan pengalaman yang lebih interaktif dan mudah diakses oleh perekrut atau klien potensial.",
       tags: ["React", "Node.js", "MongoDB"],
-      link: "portofolio-cv-pied.vercel.app",
+      link: "portofolio-five-gold-36.vercel.app",
     },
     {
       title: "Weather App",
@@ -112,11 +113,67 @@ export default function Portfolio() {
       {/* Hero Section */}
       <section
         id="home"
-        className="min-h-screen flex items-center justify-center px-4 pt-20"
+        className="min-h-screen flex items-center justify-center px-4 pt-20 relative overflow-hidden"
       >
-        <div className="text-center max-w-2xl mx-auto">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Gradient Orbs */}
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute top-40 right-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+
+          {/* Grid Background */}
+          <div className="absolute inset-0 opacity-10">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage:
+                  "linear-gradient(0deg, transparent 24%, rgba(79, 172, 254, .05) 25%, rgba(79, 172, 254, .05) 26%, transparent 27%, transparent 74%, rgba(79, 172, 254, .05) 75%, rgba(79, 172, 254, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(79, 172, 254, .05) 25%, rgba(79, 172, 254, .05) 26%, transparent 27%, transparent 74%, rgba(79, 172, 254, .05) 75%, rgba(79, 172, 254, .05) 76%, transparent 77%, transparent)",
+                backgroundSize: "50px 50px",
+              }}
+            ></div>
+          </div>
+
+          {/* Floating Lines */}
+          <svg
+            className="absolute w-full h-full opacity-20"
+            preserveAspectRatio="none"
+          >
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#0ea5e9" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="#06b6d4" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M 0,200 Q 250,150 500,200 T 1000,200"
+              stroke="url(#grad1)"
+              strokeWidth="2"
+              fill="none"
+              className="animate-pulse"
+            />
+            <path
+              d="M 0,400 Q 250,350 500,400 T 1000,400"
+              stroke="url(#grad1)"
+              strokeWidth="2"
+              fill="none"
+              className="animate-pulse animation-delay-1000"
+            />
+          </svg>
+        </div>
+
+        {/* Content */}
+        <div className="text-center max-w-2xl mx-auto relative z-10">
+          {/* Initial Badge */}
+          <div className="mb-8 inline-block">
+            <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center border-2 border-white/20 shadow-lg animate-float">
+              <span className="text-5xl font-bold text-white">MAG</span>
+            </div>
+          </div>
+
+          {/* Main Profile Image */}
           <div className="mb-8">
-            <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-blue-500 border-cyan-500">
+            <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-blue-500 border-cyan-500 shadow-2xl animate-float animation-delay-1000">
               <img
                 src="profile.jpg.jpeg"
                 alt="Profile"
@@ -124,12 +181,20 @@ export default function Portfolio() {
               />
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-5">
-            Halo, Saya {"Muhammad Arif Giovanni"}{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-              Developer
+
+          {/* Text Content */}
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-5 leading-tight">
+            <span className="block">Halo, Saya</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 animate-gradient">
+              Muhammad Arif Giovanni
             </span>
           </h1>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+            <span className="inline-block bg-gradient-to-r from-blue-500 to-cyan-500 text-transparent bg-clip-text">
+              Developer
+            </span>
+          </h2>
+
           <p className="text-xl text-slate-400 mb-4">
             Mahasiswa Informatika | Web Developer | Fresh Graduate
           </p>
@@ -137,10 +202,11 @@ export default function Portfolio() {
             Passionate tentang web development dan user experience. Mencari
             kesempatan magang untuk mengembangkan skill teknis.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white"
+              className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white shadow-lg hover:shadow-xl transition-all"
               asChild
             >
               <a href="#projects">Lihat Project</a>
@@ -240,6 +306,206 @@ export default function Portfolio() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Achievement Timeline Section */}
+      <section id="achievements" className="py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">
+            Pencapaian & Sertifikasi
+          </h2>
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 via-cyan-500 to-purple-500"></div>
+
+            {/* Timeline Items */}
+            <div className="space-y-12">
+              {/* Item 1 */}
+              <div className="md:flex items-center gap-8">
+                <div className="md:w-1/2 md:text-right">
+                  <div className="bg-slate-800 border border-slate-700 p-6 rounded-lg hover:border-blue-500 transition-colors animate-timeline-in">
+                    <h3 className="text-xl font-bold text-blue-400 mb-2">
+                      Certificate IT Bootcamp
+                    </h3>
+                    <p className="text-slate-400 mb-2">
+                      Sertifikasi Transformasi Digital : Integrasi IoT & Kecerdasan Buatan Untuk Solusi Masa Depan
+                    </p>
+                    <p className="text-cyan-400 font-semibold">2025</p>
+                  </div>
+                  <p className="text-blue-400 font-semibold">
+                     Integrasi IoT & AI
+                  </p>
+                </div>
+                <div className="hidden md:flex justify-center">
+                  <div className="w-4 h-4 bg-blue-500 rounded-full border-4 border-slate-900 shadow-lg shadow-blue-500/50"></div>
+                </div>
+                <div className="md:w-1/2"></div>
+              </div>
+
+              {/* Item 2 */}
+              <div className="md:flex items-center gap-8 flex-row-reverse">
+                <div className="md:w-1/2 md:text-left">
+                  <div className="bg-slate-800 border border-slate-700 p-6 rounded-lg hover:border-cyan-500 transition-colors animate-timeline-in animation-delay-1000">
+                    <h3 className="text-xl font-bold text-cyan-400 mb-2">
+                      Certificate CCNAv7: Introduction to Networks
+                    </h3>
+                    <p className="text-slate-400 mb-2">
+                      Sertifikat penyelesaian kursus CCNAv7 -  Introduction to Networks, Cisco Networking Academy
+                    </p>
+                    <p className="text-blue-400 font-semibold">2024</p>
+                  </div>
+                  <p className="text-blue-400 font-semibold">
+                    Networking, Cisco Packer Tracer
+                  </p>
+                </div>
+                <div className="hidden md:flex justify-center">
+                  <div className="w-4 h-4 bg-cyan-500 rounded-full border-4 border-slate-900 shadow-lg shadow-cyan-500/50"></div>
+                </div>
+                <div className="md:w-1/2"></div>
+              </div>
+
+              {/* Item 3 */}
+              <div className="md:flex items-center gap-8">
+                <div className="md:w-1/2 md:text-right">
+                  <div className="bg-slate-800 border border-slate-700 p-6 rounded-lg hover:border-purple-500 transition-colors animate-timeline-in animation-delay-2000">
+                    <h3 className="text-xl font-bold text-purple-400 mb-2">
+                      Certificate Mikrotik MTCNA 
+                    </h3>
+                    <p className="text-slate-400 mb-2">
+                      Sertifikat penyelesaian kursus Mikrotik Network Associate
+                    </p>
+                    <p className="text-cyan-400 font-semibold">2026</p>
+                  </div>
+                  <p className="text-blue-400 font-semibold">
+                    Mikrotik Network Associate
+                  </p>
+                </div>
+                <div className="hidden md:flex justify-center">
+                  <div className="w-4 h-4 bg-purple-500 rounded-full border-4 border-slate-900 shadow-lg shadow-purple-500/50"></div>
+                </div>
+                <div className="md:w-1/2"></div>
+              </div>
+
+              {/* Item 4 */}
+              <div className="md:flex items-center gap-8 flex-row-reverse">
+                <div className="md:w-1/2 md:text-left">
+                  <div className="bg-slate-800 border border-slate-700 p-6 rounded-lg hover:border-blue-500 transition-colors animate-timeline-in animation-delay-3000">
+                    <h3 className="text-xl font-bold text-blue-400 mb-2">
+                      Analisis Sentimen Pengguna TikTok Terhadap Postingan Tiktok smartfrenworld Menggunakan Algoritma Naïve Bayes dan Logistic Regression
+                    </h3>
+                    <p className="text-slate-400 mb-2">
+                      Jurnal publikasi mengenai Analisis Sentimen Pengguna TikTok Terhadap Postingan Tiktok smartfrenworld Menggunakan Algoritma Naïve Bayes dan Logistic Regression
+                    </p>
+                    <p className="text-blue-400 font-semibold">2022</p>
+                  </div>
+                    <p className="text-blue-400 font-semibold">
+                      Sentiment Analysis, Naïve Bayes dan Logistic Regression
+                    </p>
+                </div>
+                <div className="hidden md:flex justify-center">
+                  <div className="w-4 h-4 bg-blue-500 rounded-full border-4 border-slate-900 shadow-lg shadow-blue-500/50"></div>
+                </div>
+                <div className="md:w-1/2"></div>
+              </div>
+
+              {/* Item 5 */}
+              <div className="md:flex items-center gap-8">
+                <div className="md:w-1/2 md:text-right">
+                  <div className="bg-slate-800 border border-slate-700 p-6 rounded-lg hover:border-cyan-500 transition-colors animate-timeline-in animation-delay-4000">
+                    <h3 className="text-xl font-bold text-cyan-400 mb-2">
+                      PCAP: Programming Essentials in Python
+                    </h3>
+                    <p className="text-slate-400 mb-2">
+                      Sertifikat penyelesaian kursus PCAP: Programming Essentials in Python, Cisco Networking Academy 
+                    </p>
+                    <p className="text-cyan-400 font-semibold">2023</p>
+                  </div>
+                  <p className="text-blue-400 font-semibold">
+                    Python
+                  </p>
+                </div>
+                <div className="hidden md:flex justify-center">
+                  <div className="w-4 h-4 bg-cyan-500 rounded-full border-4 border-slate-900 shadow-lg shadow-cyan-500/50"></div>
+                </div>
+                <div className="md:w-1/2"></div>
+              </div>
+
+              {/* Item 6 */}
+              <div className="md:flex items-center gap-8 flex-row-reverse">
+                <div className="md:w-1/2 md:text-left">
+                  <div className="bg-slate-800 border border-slate-700 p-6 rounded-lg hover:border-purple-500 transition-colors animate-timeline-in animation-delay-5000">
+                    <h3 className="text-xl font-bold text-purple-400 mb-2">
+                      Fundamental of User Infarce/User Experience
+                    </h3>
+                    <p className="text-slate-400 mb-2">
+                      Sertifikat partisipasi sebagai peserta dala seminar "Fundamental of User Infarce/User Experience" yang diselenggarakan oleh fakultas Teknik & Informatika Universitas BSI.
+                    </p>
+                    <p className="text-blue-400 font-semibold">2022</p>
+                  </div>
+                  <p className="text-blue-400 font-semibold">
+                    Fundamental
+                  </p>
+                </div>
+                <div className="hidden md:flex justify-center">
+                  <div className="w-4 h-4 bg-purple-500 rounded-full border-4 border-slate-900 shadow-lg shadow-purple-500/50"></div>
+                </div>
+                <div className="md:w-1/2"></div>
+              </div>
+            </div>
+
+            {/* Mobile Timeline */}
+            <div className="md:hidden space-y-8">
+              {[
+                {
+                  title: "Web Development Certificate",
+                  desc: "Sertifikasi menyelesaikan kursus web development online",
+                  year: "2024",
+                },
+                {
+                  title: "React Mastery Course",
+                  desc: "Menguasai React dan advanced JavaScript patterns",
+                  year: "2023",
+                },
+                {
+                  title: "JavaScript Advanced",
+                  desc: "Sertifikat penguasaan JavaScript advanced dan ES6+",
+                  year: "2023",
+                },
+                {
+                  title: "CSS & Responsive Design",
+                  desc: "Sertifikasi CSS advanced dan responsive web design",
+                  year: "2022",
+                },
+                {
+                  title: "UI/UX Fundamentals",
+                  desc: "Sertifikat prinsip-prinsip fundamental UI/UX design",
+                  year: "2022",
+                },
+                {
+                  title: "HTML5 Mastery",
+                  desc: "Penguasaan HTML5 semantic dan best practices",
+                  year: "2021",
+                },
+              ].map((item, index) => (
+                <div
+                  key={item.title}
+                  className="bg-slate-800 border border-slate-700 p-4 rounded-lg hover:border-blue-500 transition-colors"
+                >
+                  <div className="flex gap-3">
+                    <div className="w-3 h-3 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="font-bold text-white">{item.title}</h3>
+                      <p className="text-sm text-slate-400 mb-1">{item.desc}</p>
+                      <p className="text-sm text-cyan-400 font-semibold">
+                        {item.year}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
