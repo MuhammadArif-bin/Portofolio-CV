@@ -1,0 +1,155 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Mail,
+  Github,
+  Linkedin,
+  ExternalLink,
+  Menu,
+  X,
+  Download,
+} from "lucide-react";
+import { useState } from "react";
+
+export default function Portfolio() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const projects = [
+    {
+      title: "PERANCANGAN WEBSITE PEMESANAN TIKET PESAWAT BERBASIS WEB",
+      description:
+        "Perancangan ini membahas perancangan dan pengembangan sebuah Website Pemesanan Tiket Pesawat (studi kasus maskapai Lion Air) yang bertujuan untuk mempermudah calon penumpang dalam memesan tiket, mengecek jadwal, dan membandingkan harga secara online.",
+      tags: ["HTML5", "CSS3", "JavaScript"],
+      link: "http://localhost:8080/admin",
+    },
+    {
+      title: "Website Portofolio & CV",
+      description:
+        "Website ini adalah platform digital yang dirancang sebagai pusat personal branding profesional. Tujuannya adalah untuk menampilkan riwayat pendidikan, pengalaman kerja, keahlian teknis, serta galeri proyek yang telah dikerjakan secara terstruktur dan estetis. Website ini berfungsi sebagai pengganti CV statis (kertas/PDF) dengan memberikan pengalaman yang lebih interaktif dan mudah diakses oleh perekrut atau klien potensial.",
+      tags: ["React", "Node.js", "MongoDB"],
+      link: "portofolio-five-gold-36.vercel.app",
+    },
+    {
+      title: "Weather App",
+      description: "Aplikasi cuaca real-time dengan API integration",
+      tags: ["React", "API", "Tailwind CSS"],
+      link: "#",
+    },
+  ];
+
+  const skills = {
+    Frontend: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+    ],
+    Tools: ["Git", "Webpack", "npm", "Visual Studio Code"],
+  };
+
+  return (
+    <div className="min-h-screen bg-linear-to-br from-slate-950 via-slate-900 to-slate-950">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full bg-slate-900/80 backdrop-blur-md z-50 border-b border-slate-700">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <span className="text-slate-450">&lt;</span>
+            <span className="text-xl font-bold text-white">My Portofolio</span>
+            <span className="text-slate-450">/&gt;</span>
+          </div>
+
+          {/* Social Links (desktop) */}
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href="https://github.com/MuhammadArif-bin"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-300 hover:text-white transition-colors"
+              aria-label="GitHub"
+            >
+              <Github size={18} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/muhammad-arif-giovanni-50792b3a8/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-300 hover:text-white transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={18} />
+            </a>
+          </div>
+          {/* Desktop Menu */}
+          <div className="hidden md:flex gap-8">
+            {["Home", "Tentang", "Skills", "Projects", "Kontak"].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="text-slate-300 hover:text-white transition-colors"
+              >
+                {item}
+              </a>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? (
+              <X className="text-white" />
+            ) : (
+              <Menu className="text-white" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-slate-700 bg-slate-900">
+            <div className="flex flex-col gap-4 p-4">
+              {["Home", "Tentang", "Skills", "Projects", "Kontak"].map(
+                (item) => (
+                  <a
+                    key={item}
+                    href={`#${item.toLowerCase()}`}
+                    className="text-slate-300 hover:text-white transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item}
+                  </a>
+                ),
+              )}
+            </div>
+          </div>
+        )}
+      </nav>
+
+      {/* Hero Section */}
+      <section
+        id="home"
+        className="min-h-screen flex items-center justify-center px-4 pt-20 relative overflow-hidden"
+      >
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Gradient Orbs */}
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute top-40 right-10 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+
+          {/* Grid Background */}
+          <div className="absolute inset-0 opacity-10">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage:
+                  "linear-gradient(0deg, transparent 24%, rgba(79, 172, 254, .05) 25%, rgba(79, 172, 254, .05) 26%, transparent 27%, transparent 74%, rgba(79, 172, 254, .05) 75%, rgba(79, 172, 254, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(79, 172, 254, .05) 25%, rgba(79, 172, 254, .05) 26%, transparent 27%, transparent 74%, rgba(79, 172, 254, .05) 75%, rgba(79, 172, 254, .05) 76%, transparent 77%, transparent)",
+                backgroundSize: "50px 50px",
+              }}
+            ></div>

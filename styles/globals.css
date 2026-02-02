@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -75,8 +75,8 @@
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -121,5 +121,35 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* PDF / print helpers for certificate preview */
+.pdf-page {
+  width: 210mm;
+  height: 297mm;
+  padding: 28mm 20mm;
+  background: white;
+  color: #0f172a;
+  box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+  border-radius: 8px;
+}
+.pdf-preview-iframe {
+  width: 100%;
+  height: calc(100vh - 6rem);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 6px;
+}
+@media print {
+  body * {
+    visibility: visible;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .pdf-page {
+    box-shadow: none;
+    margin: 0;
+    page-break-after: avoid;
   }
 }

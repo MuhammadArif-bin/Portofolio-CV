@@ -1,7 +1,7 @@
 @echo off
 cd /d "%~dp0"
 echo Installing dependencies...
-call npm install --legacy-peer-deps
+call pnpm install
 if errorlevel 1 (
     echo Failed to install dependencies
     pause
@@ -10,9 +10,9 @@ if errorlevel 1 (
 echo.
 echo Starting development server...
 echo.
-echo The website will be available at http://localhost:3000
+echo The website will be available at http://localhost:3001
 echo Press Ctrl+C to stop the server
 echo.
 pause
-call npm run dev
+call pnpm run dev
 pause
